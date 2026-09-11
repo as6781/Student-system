@@ -11,6 +11,9 @@ def add_student():
     while True:
         try:
             student['Age'] = int(input('Enter your age: '))
+            if student['Age'] < 0:
+                print('Age cannot be negative. Please enter a valid age.')
+                continue
             break
         except ValueError:
             print('Invalid input for age. Please enter a number.')
@@ -27,6 +30,12 @@ def add_student():
     while True:
         try:
             student['Marks'] = int(input('Enter your marks: '))
+            if student['Marks'] < 0:
+                print('Marks cannot be negative. Please enter valid marks.')
+                continue
+            if student['Marks'] > 100:
+                print('Marks cannot be greater than 100. Please enter valid marks.')
+                continue
             break
         except ValueError:
             print('Invalid input for marks. Please enter a number.')
